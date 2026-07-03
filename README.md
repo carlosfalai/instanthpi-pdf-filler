@@ -1,5 +1,30 @@
 # InstantHPI PDF Filler — for doctors
 
+> **THIS IS A MAQUETTE — a working blueprint, not a certified product.**
+> It is a starting kit for you (or your engineers, or Claude Code) to build
+> your own version from A to Z, adapted to your clinic and your privacy law.
+> It makes no clinical claims; it fills form fields from text you provide,
+> and everything it produces must be reviewed by you before use. It belongs
+> to the same family as our other in-practice tools (patient inviter,
+> scan-fax → rename → review → secure-message pipelines) that we run
+> privately and publish as blueprints.
+
+## Build it from A to Z with Claude Code
+
+Paste this to Claude Code inside a clone of this repo:
+
+> "Read fill.js and README.md. Build me a production version for my clinic:
+> 1) keep the never-invent rule and blank-field flagging; 2) wire the LLM to
+> [my choice: local Ollama / AWS Bedrock under my BAA]; 3) add a simple
+> drag-and-drop window (Electron) around fill.js; 4) package as an .exe with
+> `npm run build-exe`; 5) add a coordinate-based fallback for flat PDFs using
+> pdf-lib drawText. Do not add network calls beyond the LLM endpoint."
+
+**Tools and where they come from:** [pdf-lib](https://pdf-lib.js.org) (MIT,
+npm) reads/fills AcroForm fields · any OpenAI-compatible LLM API maps your
+text to fields (DeepSeek/OpenAI/[Ollama](https://ollama.com) local/Bedrock)
+· [pkg](https://github.com/vercel/pkg) (npm) builds the .exe · Node 18+.
+
 Give it any **fillable PDF form** and paste your **patient conversation or
 SOAP note**. The AI reads the form's fields and fills them from your text.
 What your text doesn't answer is **left blank and flagged — never invented.**

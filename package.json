@@ -1,0 +1,12 @@
+{
+  "name": "instanthpi-pdf-filler",
+  "version": "1.0.0",
+  "description": "Fill any fillable PDF form from a patient conversation or SOAP note using AI. Review before signing.",
+  "main": "fill.js",
+  "bin": { "instanthpi-pdf-filler": "fill.js" },
+  "scripts": {
+    "build-exe": "npx pkg fill.js --targets node18-win-x64 --output dist/instanthpi-pdf-filler.exe"
+  },
+  "dependencies": { "pdf-lib": "^1.17.1" },
+  "license": "MIT"
+}
